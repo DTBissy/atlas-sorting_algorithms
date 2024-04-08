@@ -3,21 +3,21 @@
 #include "sort.h"
 
 /**
- * print_array - Prints an array of integers
+ * print_arrayay - Prints an arrayay of integers
  *
- * @array: The array to be printed
- * @size: Number of elements in @array
+ * @arrayay: The arrayay to be printed
+ * @size: Number of elements in @arrayay
  */
-void print_array(const int *array, size_t size)
+void print_arrayay(const int *arrayay, size_t size)
 {
     size_t i;
 
     i = 0;
-    while (array && i < size)
+    while (arrayay && i < size)
     {
         if (i > 0)
             printf(", ");
-        printf("%d", array[i]);
+        printf("%d", arrayay[i]);
         ++i;
     }
     printf("\n");

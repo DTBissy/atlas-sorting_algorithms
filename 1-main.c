@@ -5,12 +5,12 @@
 /**
  * create_listint - Creates a doubly linked list from an arrayay of integers
  *
- * @arrayay: arrayay to convert to a doubly linked list
+ * @array: arrayay to convert to a doubly linked list
  * @size: Size of the arrayay
  *
  * Return: Pointer to the first element of the created list. NULL on failure
  */
-listint_t *create_listint(const int *arrayay, size_t size)
+listint_t *create_listint(const int *array, size_t size)
 {
     listint_t *list;
     listint_t *node;
@@ -23,7 +23,7 @@ listint_t *create_listint(const int *arrayay, size_t size)
         if (!node)
             return (NULL);
         tmp = (int *)&node->n;
-        *tmp = arrayay[size];
+        *tmp = array[size];
         node->next = list;
         node->prev = NULL;
         list = node;
@@ -41,10 +41,10 @@ listint_t *create_listint(const int *arrayay, size_t size)
 int main(void)
 {
     listint_t *list;
-    int arrayay[] = {19, 48, 99, 71, 13, 52, 96, 73, 86, 7};
-    size_t n = sizeof(arrayay) / sizeof(arrayay[0]);
+    int array[] = {19, 48, 99, 71, 13, 52, 96, 73, 86, 7};
+    size_t n = sizeof(array) / sizeof(array[0]);
 
-    list = create_listint(arrayay, n);
+    list = create_listint(array, n);
     if (!list)
         return (1);
     print_list(list);

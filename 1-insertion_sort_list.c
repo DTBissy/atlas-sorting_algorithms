@@ -1,22 +1,40 @@
 #include "sort.h"
-/**
- * insertion_sort_list - Implements a insertion sort
- * @list: List to sort from
- * Return: Return
-*/
-void insertion_sort_list(listint_t **list)
-{
-size_t i, key, j;
-for (i = 0; i < n; i++)
-{
-  key = array[i];
-  j = i - 1;
 
-  while (j >= 0 && array[j] > key)
+void sort_swap(listint_t **list, listint_t *new_node)
+{
+  listint_t* current;
+
+  if (*list == NULL || (*list)->n >= new_node->n)
   {
-    array[j + 1] = array[j];
-    j = j - 1;
+    new_node->next = *list;
+    *list = new_node;
   }
-  array[j + 1] = key;
+  else
+  {
+    current = *list;
+    while (current->next != NULL && current->next->n < new_node->n)
+    {
+      current = current->next;
+    }
+    new_node->next = current->next;
+    if (current->next != NULL)
+    current->next->prev = new_node;
+    current->next = new_node;
+    new_node->prev = current;
   }
 }
+void insertion_sort_list(listint_t **list)
+{
+  listint_t* sorted = NULL;
+  listint_t* current = *list;
+  listint_t* next;
+
+  while (current != NULL)
+  {
+    next = current->next;
+    sort_swap(&sorted, current);
+    current = next;
+  }
+  *list = sorted;
+  print_list(*list);
+  }

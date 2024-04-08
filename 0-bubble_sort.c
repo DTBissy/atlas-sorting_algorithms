@@ -3,32 +3,32 @@
 
 /**
  * swap - A swap function for bubble sort
- * @arrayay: the arrayay elements
+ * @array: the array elements
  * @i: the element
  * @j: the element to swapped with
  * Return: RELAX
  */
-void swap(int* arrayay, int i, int j)
+void swap(int* array, int i, int j)
 {
-int temp = arrayay[i];
-arrayay[i] = arrayay[j];
-arrayay[j] = temp;
+int temp = array[i];
+array[i] = array[j];
+array[j] = temp;
 }
 /**
  * bubble_sort - A bubble sort implementation
- * @arrayay: arrayay of integars
+ * @array: array of integars
  * @size: size of list
  * Return: Ordered list
 */
-void bubble_sort(int *arrayay, size_t size)
+void bubble_sort(int *array, size_t size)
 {
   size_t i, j;
 
   for (i = 0; i < size - 1; i++)
 	  for (j = 0; j < size - i - 1; j++)
-		  if (arrayay[j] > arrayay[j + 1])
+		  if (array[j] > array[j + 1])
       {
-				  swap(arrayay, j, j + 1);
-          print_arrayay(arrayay, size);
+				  swap(array, j, j + 1);
+          print_array(array, size);
       }
 }

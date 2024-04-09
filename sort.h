@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /**
  * struct listint_s - Doubly linked list node
@@ -17,9 +18,9 @@ typedef struct listint_s
 
 
 listint_t *create_listint(const int *array, size_t size);
-void sort_swap(listint_t **list, listint_t *new_node);
 void insertion_sort_list(listint_t **list);
+void selection_sort(int *array, size_t size);
 void print_list(const listint_t *list);
-void swap(int* array, int i, int j);
+void bubble_swap(int* array, int i, int j);
 void bubble_sort(int *array, size_t size);
 void print_array(const int *array, size_t size);

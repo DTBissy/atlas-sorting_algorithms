@@ -1,10 +1,10 @@
 #include "sort.h"
 
-void fub_swap(int *array, int i, int j)
+void sel_swap(int min, int i)
 {
-int temp = array[i];
-array[i] = array[j];
-array[j] = temp;
+    int temp = min;
+    min = i;
+    i = temp;
 }
 
 void selection_sort(int *array, size_t size)
@@ -21,7 +21,7 @@ void selection_sort(int *array, size_t size)
       min = j;
     }
     if (min != i)
-    fub_swap(array, min, i);
+    sel_swap(min, i);
     print_array(array, size);
   }
 }

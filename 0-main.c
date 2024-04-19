@@ -3,19 +3,20 @@
 #include "sort.h"
 
 /**
- * main - Entry point
- *
- * Return: Always 0
- */
+* main - Entry point
+*
+* Return: Always 0
+*/
 int main(void)
 {
-    int arrayay[] = {19, 48, 99, 71, 13, 52, 96, 73, 86, 7};
-    size_t n = sizeof(arrayay) / sizeof(arrayay[0]);
+	int array[] = {19, 48, 99, 71, 13, 52, 96, 73, 86, 7};
 
-    print_arrayay(arrayay, n);
-    printf("\n");
-    bubble_sort(arrayay, n);
-    printf("\n");
-    print_arrayay(arrayay, n);
-    return (0);
+	size_t n = sizeof(array) / sizeof(array[0]);
+
+	print_arrayay(array, n);
+	printf("\n");
+	bubble_sort(array, n);
+	printf("\n");
+	print_arrayay(array, n);
+	return (0);
 }

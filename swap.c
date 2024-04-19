@@ -1,10 +1,8 @@
 #include "sort.h"
 
-void swap_int(int *a, int *b)
+void swap(int *array, int min, int i)
 {
-	int temp;
-
-	temp = *a;
-	*a = *b;
-	*b = temp;
+    int temp = arr[min];
+    arr[min] = arr[i];
+    arr[i] = temp;
 }

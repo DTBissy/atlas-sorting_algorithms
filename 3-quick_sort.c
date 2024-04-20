@@ -26,16 +26,22 @@ for (j = low; j < high; j++)
 	if (array[j] < pivot)
 	{
 	i++;
+  if (array[i] != array[j])
+  {
 	quick_swap(array, i, j);
+  print_array(array, size);
+  }
   }
 }
+if (array[i + 1] != array[high])
+{
 quick_swap(array, i + 1, high);
 print_array(array, size);
+}
 return (i + 1);
 }
 void quick_sort(int *array, size_t size)
 {
-
 if (array == NULL || size < 2)
 return;
 quick_sort_pointer_return(array, 0, size - 1, size);
